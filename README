@@ -1,0 +1,13 @@
+This is a standalone application which exposes rubycas-client's 
+cas_proxy_callback feature.  It reads its configuration from bcsec's central
+parameters file to reduce duplicate configuration.  The expected name for the
+central parameters file is based on RAILS_ENV:
+
+  RAILS_ENV   Expected filename
+  =========   =================
+  development /etc/nubic/bcsec-local.yml
+  staging     /etc/nubic/bcsec-staging.yml
+  production  /etc/nubic/bcsec-prod.yml
+
+If these defaults don't work for you, you can set the environment variable
+BCSEC_CENTRAL to the path you'd prefer to use.

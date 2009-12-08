@@ -1,0 +1,3 @@
+ActionController::Routing::Routes.draw do |map|
+  map.cas_proxy_callback 'cas_proxy_callback/:action', :controller => 'cas_proxy_callback'
+end
