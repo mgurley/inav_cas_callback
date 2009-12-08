@@ -77,7 +77,7 @@ cas_logger.level = Logger::DEBUG
 inav_config_file =
   case RAILS_ENV
     when 'development','test'; "config/inav.yml"
-    when 'staging', 'produciton';
+    when 'staging', 'production';
       if defined?(JRUBY_VERSION)
         require 'jruby'
         catalina_home = Java::JavaLang::System.getProperty('catalina.home')
@@ -86,6 +86,8 @@ inav_config_file =
         "config/inav.yml"
       end
   end
+
+require 'erb'
 
 INAV_CONFIG = YAML.load(ERB.new(File.read(inav_config_file)).result)
 
